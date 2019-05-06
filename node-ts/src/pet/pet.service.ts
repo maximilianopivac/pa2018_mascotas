@@ -6,6 +6,8 @@ import { NextFunction } from "express-serve-static-core";
 import { IUserSessionRequest } from "../security/security.service";
 import * as errorHandler from "../utils/error.handler";
 import { IPet, Pet } from "./pet.schema";
+import { Province } from "../provinces/province.schema";
+import { Profile } from "../profile/profile.schema";
 
 /**
  * Retorna los datos de la mascota
@@ -177,6 +179,19 @@ export function findByCurrentUser(req: IUserSessionRequest, res: express.Respons
   }).exec(function (err, pets) {
     if (err) return next();
     res.json(pets);
+  });
+}
+
+export function findByLocation(req: IUserSessionRequest, res: express.Response, next: NextFunction) {
+  const userProvince = Profile.find({
+    user: req.user._id
+  }, { province: 1 });
+
+  Province.find({
+    name: userProvince
+  }).exec(function(err, provinceName) {
+    if (err) return next();
+    res.json(provinceName);
   });
 }
 

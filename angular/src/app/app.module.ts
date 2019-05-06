@@ -17,8 +17,8 @@ import { ProvinciaService } from "./provincia/provincia.service";
 import { FileUploadComponent } from "./tools/image.base64";
 import { RegistrarUsuarioComponent } from "./usuario/registrar-usuario.component";
 import { UsuarioService } from "./usuario/usuario.service";
+import { AmigosComponent } from "./amigos/amigos.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
-import { BuscarAmigosComponent } from "./mascota/buscar-amigos.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { BuscarAmigosComponent } from "./mascota/buscar-amigos.component";
     NuevaMascotaComponent,
     RegistrarUsuarioComponent,
     FileUploadComponent,
-    BuscarAmigosComponent
+    AmigosComponent
   ],
   imports: [
     BrowserModule,

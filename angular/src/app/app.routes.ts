@@ -6,7 +6,7 @@ import { PerfilComponent } from "./perfil/perfil.component";
 import { RegistrarUsuarioComponent } from "./usuario/registrar-usuario.component";
 import { UsuarioService } from "./usuario/usuario.service";
 import { WelcomeComponent } from "./welcome/welcome.component";
-import { BuscarAmigosComponent } from "./mascota/buscar-amigos.component";
+import { AmigosComponent } from "./amigos/amigos.component";
 
 @Injectable()
 export class LoggedIn implements CanActivate {
@@ -33,7 +33,7 @@ export const routes: Routes = [
     { path: "mascotas", component: MascotaComponent, canActivate: [LoggedIn] },
     { path: "nuevaMascota/:id", component: NuevaMascotaComponent, canActivate: [LoggedIn] },
     { path: "nuevaMascota", component: NuevaMascotaComponent, canActivate: [LoggedIn] },
-    { path: "amigos", component: BuscarAmigosComponent, canActivate: [LoggedIn] }
+    { path: "amigos", component: AmigosComponent, canActivate: [LoggedIn] }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

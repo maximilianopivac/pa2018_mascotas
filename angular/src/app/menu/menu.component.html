@@ -1,5 +1,10 @@
 <!--Si hay un usuario logueado, se usa este menu-->
 <div class="pageHeader">
+
+    <div class="inlineContent menu">
+        <input type="image" src="../../assets/p logo.jpg" [routerLink]="['/']" width="25px" title="Inicio">
+    </div>
+
     <div class='inlineContent menu' *ngIf="usuarioLogueado">
         <input type="button" class="menuButton" [routerLink]="['/perfilUsuario']" value="Perfil" />
     </div>
@@ -9,8 +14,8 @@
         <input type="button" class="menuButton" [routerLink]="['/mascotas']" value="Mascotas" />
     </div>
 
-    <div class='inlineContent menu' *ngIf="usuarioLogueado">
-        <input type="button" class="menuButton" [routerLink]="['/amigos']" value="Buscar Amigos" />
+    <div class="inlineContent menu" *ngIf="usuarioLogueado">
+        <input type="button" class="menuButton" [routerLink]="['/amigos']" value="Amigos cerca" />
     </div>
 
     <div class='inlineContent userLoggedIn' *ngIf="usuarioLogueado">
