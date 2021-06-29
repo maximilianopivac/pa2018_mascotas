@@ -19,6 +19,7 @@ import { RegistrarUsuarioComponent } from "./usuario/registrar-usuario.component
 import { UsuarioService } from "./usuario/usuario.service";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { BuscarAmigosComponent } from "./mascota/buscar-amigos.component";
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [

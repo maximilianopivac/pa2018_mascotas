@@ -203,7 +203,7 @@ export function findByID(req: IFindByIdRequest, res: express.Response, next: Nex
     _id: escape(id),
     enabled: true
   },
-    function (err, pet) {
+    function (err: any, pet: IPet) {
       if (err) return errorHandler.handleError(res, err);
 
       if (!pet) {

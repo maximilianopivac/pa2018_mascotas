@@ -2,6 +2,7 @@
 	"compilerOptions": {
 		"baseUrl": "",
 		"declaration": false,
+		"skipLibCheck": true,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"lib": [

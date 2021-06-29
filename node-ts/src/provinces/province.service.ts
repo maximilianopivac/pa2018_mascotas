@@ -58,7 +58,7 @@ export function findByID(req: IFindByIdRequest, res: express.Response, next: Nex
     _id: escape(id),
     enabled: true
   },
-    function (err, province: IProvince) {
+    function (err: any, province: IProvince) {
       if (err) return errorHandler.handleError(res, err);
 
       if (!province) {

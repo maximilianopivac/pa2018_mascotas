@@ -19,6 +19,7 @@ export interface IUser extends mongoose.Document {
   enabled: Boolean;
   authenticate: Function;
   setPasswordText: Function;
+  hashPassword: Function;
 }
 
 /**
@@ -31,7 +32,7 @@ const validateLocalStrategyPassword = function (password: string) {
 /**
  * Esquea de un usuario del sistema
  */
-export let UserSchema = new mongoose.Schema({
+export let UserSchema = new mongoose.Schema<IUser>({
   name: {
     type: String,
     trim: true,

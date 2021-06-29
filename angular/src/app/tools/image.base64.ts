@@ -17,7 +17,7 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from "@angular/f
 })
 export class FileUploadComponent implements ControlValueAccessor {
     selectedFileName: string = undefined;
-    image: string;
+    image: string | ArrayBuffer;
 
     @ViewChildren("fileInput") fileInput;
 

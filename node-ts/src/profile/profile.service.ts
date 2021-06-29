@@ -146,7 +146,7 @@ export function update(req: IUpdateRequest, res: express.Response) {
         _id: req.user.id,
         enabled: true
       },
-        function (err, usuario) {
+        function (err: any, usuario: { name: any; save: (arg0: (err: any) => express.Response<any, Record<string, any>>) => void; }) {
           if (err) return errorHandler.handleError(res, err);
           usuario.name = req.body.name;
           usuario.save(function (err: any) {
@@ -170,7 +170,7 @@ export function fillForCurrentUser(req: IFindByCurrentUserRequest, res: express.
     user: req.user._id,
     enabled: true
   },
-    function (err, profile) {
+    function (err: any, profile: IProfile) {
       if (err || !profile) return next();
 
       req.profile = profile;
@@ -195,7 +195,7 @@ export function fillProvinceIfPresent(req: IFindProvince, res: express.Response,
     _id: escape(req.body.province),
     enabled: true
   },
-    function (err, province) {
+    function (err: any, province: IProvince) {
       if (err) return errorHandler.handleError(res, err);
 
       if (!province) {
