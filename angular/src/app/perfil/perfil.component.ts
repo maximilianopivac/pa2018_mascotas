@@ -8,7 +8,8 @@ import { Image, Perfil, PerfilService } from "./perfil.service";
 
 @Component({
   selector: "app-perfil",
-  templateUrl: "./perfil.component.html"
+  templateUrl: "./perfil.component.html",
+  styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit, IErrorController {
   formSubmitted: boolean;

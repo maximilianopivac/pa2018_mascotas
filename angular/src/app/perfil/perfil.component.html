@@ -1,11 +1,12 @@
 <h1>Perfil</h1>
 
 <form #f="ngForm" novalidate>
-    <div class="form-group">
-        <label>Nombre:</label>
 
-        <input name="name" [(ngModel)]="perfil.name" type="text" placeholder="Nombre" size="60" />
-
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="nombre">Nombre</span>
+        </div>
+        <input type="text" [(ngModel)]="perfil.name" class="form-control" placeholder="Nombre" aria-describedby="basic-addon3">
         <div *ngIf="f.controls.name?.invalid && f.controls.name?.touched" class="error">
             Valor no v&aacute;lido.
         </div>
@@ -15,6 +16,7 @@
         </div>
     </div>
 
+    
     <div class="form-group">
         <label>Imagen:</label>
         <file-upload name="imagen" allowedTypes="image/*" uploadButtonText="Upload File" [ngModel]="imagenPerfil.image" (ngModelChange)="actualizarImagen($event)"></file-upload>
