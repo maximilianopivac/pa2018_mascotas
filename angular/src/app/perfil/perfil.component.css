@@ -1,4 +1,8 @@
-.mb-3 {
+.mb-2 {
     margin-bottom: 1rem!important;
     width: 70%;
+}
+
+.btn-outline-default{
+    border: 2px solid #198754;
 }
